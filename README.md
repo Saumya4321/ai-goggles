@@ -2,10 +2,9 @@
 
 This project aims to develop an AI system that uses live video from a webcam, generates real-time captions describing the scene, and assists visually impaired individuals.
 
-## Features
+## Present Features
 - Live webcam capture
 - Scene understanding via image captioning (using BLIP model)
-- Easy extension to include object detection
 
 ## Tech Stack
 - Python
