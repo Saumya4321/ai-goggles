@@ -1,0 +1,4 @@
+opencv-python 
+transformers 
+torch 
+torchvision
