@@ -10,6 +10,7 @@ This project aims to develop an AI system that uses live video from a webcam, ge
 - Python
 - OpenCV
 - HuggingFace Transformers (BLIP)
+- pyttsx3 (https://pypi.org/project/pyttsx3/)
 
 ## Setup
 ```bash
