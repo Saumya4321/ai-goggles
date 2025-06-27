@@ -3,6 +3,8 @@ import time
 import torch
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
+import pyttsx3
+import os
 
 # Load BLIP model and processor
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
@@ -10,9 +12,12 @@ model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-capt
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
+# Set up TTS output
+engine = pyttsx3.init()
 
 
-import os
+
+# Check if it is running on a device which is headless or has display
 
 HEADLESS = not os.environ.get("DISPLAY")
 
@@ -59,6 +64,8 @@ try:
             caption = processor.decode(output[0], skip_special_tokens=True)
 
             print(f"\n[Caption @ {time.strftime('%H:%M:%S')}] {caption}")
+            engine.say(f"{caption}")
+            engine.runAndWait()
 
     
 
