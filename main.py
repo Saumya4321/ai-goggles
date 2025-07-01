@@ -82,13 +82,4 @@ torch.onnx.export(
 # Optional: restore original decoder forward method
 model.decoder.forward = original_forward
 
-# ------------------------------
-# Quantize ONNX models
-# ------------------------------
-print("Quantizing encoder...")
-quantize_dynamic("vit_encoder.onnx", "vit_encoder_quant.onnx", weight_type=QuantType.QInt8)
-
-print("Quantizing decoder...")
-quantize_dynamic("gpt2_decoder.onnx", "gpt2_decoder_quant.onnx", weight_type=QuantType.QInt8)
-
-print("✅ Export and quantization complete.")
+print("✅ Export complete")
