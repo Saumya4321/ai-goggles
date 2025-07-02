@@ -1,0 +1,44 @@
+
+(venv) pi@raspberrypi:~/code $ python inference_live_benchmark.py
+Running in headless mode
+
+Webcam started. Press Ctrl+C to stop.
+
+12:33:53 | Encoder: 22.944s | Decoder: 30.059s | 🧮 CPU: 15.9% | 💾 RAM: 95.7%
+    → Caption: a room with a window and a desk with a computer
+12:34:10 | Encoder: 3.535s | Decoder: 10.931s | 🧮 CPU: 80.6% | 💾 RAM: 94.9%
+    → Caption: a room with a window and a desk with a computer
+12:34:26 | Encoder: 3.159s | Decoder: 9.524s | 🧮 CPU: 80.9% | 💾 RAM: 94.9%
+    → Caption: a room with a window and a desk with a computer
+12:34:42 | Encoder: 3.145s | Decoder: 9.159s | 🧮 CPU: 80.6% | 💾 RAM: 95.0%
+    → Caption: a room with a window and a desk with a computer
+12:34:58 | Encoder: 3.177s | Decoder: 10.652s | 🧮 CPU: 82.4% | 💾 RAM: 95.0%
+    → Caption: a room with a window and a desk with a computer
+12:35:13 | Encoder: 3.054s | Decoder: 8.329s | 🧮 CPU: 79.4% | 💾 RAM: 95.0%
+    → Caption: a man with glasses and a beard is smiling
+12:35:24 | Encoder: 3.103s | Decoder: 5.386s | 🧮 CPU: 74.2% | 💾 RAM: 95.0%
+    → Caption: a person standing in front of a wall
+12:35:38 | Encoder: 3.087s | Decoder: 7.891s | 🧮 CPU: 78.6% | 💾 RAM: 95.1%
+    → Caption: a man with a beard and a tie
+12:35:54 | Encoder: 3.175s | Decoder: 9.814s | 🧮 CPU: 81.5% | 💾 RAM: 95.1%
+    → Caption: a man in a blue shirt is looking at a computer
+12:36:07 | Encoder: 1.831s | Decoder: 7.831s | 🧮 CPU: 76.6% | 💾 RAM: 95.1%
+    → Caption: a person is looking at a cat in a suit
+12:36:24 | Encoder: 1.881s | Decoder: 11.620s | 🧮 CPU: 82.0% | 💾 RAM: 95.1%
+    → Caption: a room with a desk, a computer, and a painting
+12:36:35 | Encoder: 3.050s | Decoder: 5.535s | 🧮 CPU: 74.5% | 💾 RAM: 95.1%
+    → Caption: a room with a desk and a computer
+12:36:49 | Encoder: 3.096s | Decoder: 8.128s | 🧮 CPU: 79.1% | 💾 RAM: 95.1%
+    → Caption: a room with a desk and a computer
+12:37:01 | Encoder: 3.143s | Decoder: 5.337s | 🧮 CPU: 74.3% | 💾 RAM: 95.1%
+    → Caption: a man is looking at a computer screen
+12:37:17 | Encoder: 3.082s | Decoder: 9.661s | 🧮 CPU: 81.1% | 💾 RAM: 95.1%
+    → Caption: a man is sitting in a chair with his laptop
+12:37:29 | Encoder: 3.104s | Decoder: 5.766s | 🧮 CPU: 75.1% | 💾 RAM: 95.1%
+    → Caption: a man is looking at his laptop computer
+12:37:43 | Encoder: 3.094s | Decoder: 8.227s | 🧮 CPU: 79.4% | 💾 RAM: 95.1%
+    → Caption: a computer monitor sitting on top of a desk
+12:37:55 | Encoder: 3.059s | Decoder: 6.114s | 🧮 CPU: 75.7% | 💾 RAM: 95.1%
+    → Caption: a man is looking at a computer screen
+^C^Z
+[1]+  Stopped                 python inference_live_benchmark.py

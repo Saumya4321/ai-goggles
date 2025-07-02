@@ -1,0 +1,101 @@
+AzureAD+SaumyaB@Emsys_lab MINGW64 ~/OneDrive - Foundation For Science Innovation and Development (FSID)/Documents/GitHub/ai-goggles (optimization)
+$ python inference_live_benchmark.py 
+C:\Users\SaumyaB\OneDrive - Foundation For Science Innovation and Development (FSID)\Documents\GitHub\ai-goggles\.venv\Lib\site-packages\onnxruntime\capi\onnxruntime_validation.py:26: UserWarning: Unsupported Windows version (11). ONNX Runtime supports Windows 10 and above, only.
+  warnings.warn(
+Running in GUI mode
+
+Webcam started. Press Ctrl+C to stop.
+
+12:39:02 | Encoder: 0.042s | Decoder: 0.264s | 🧮 CPU: 9.9% | 💾 RAM: 57.1%
+    → Caption: a person holding a cell phone in their hand 
+12:39:05 | Encoder: 0.040s | Decoder: 0.275s | 🧮 CPU: 10.6% | 💾 RAM: 57.0%
+    → Caption: a man in a suit is holding a cell phone 
+12:39:09 | Encoder: 0.040s | Decoder: 0.225s | 🧮 CPU: 9.4% | 💾 RAM: 56.6%
+    → Caption: a man in a suit holding a white object 
+12:39:12 | Encoder: 0.041s | Decoder: 0.260s | 🧮 CPU: 9.3% | 💾 RAM: 56.6%
+    → Caption: a bathroom with a white toilet and a black counter 
+12:39:15 | Encoder: 0.040s | Decoder: 0.327s | 🧮 CPU: 10.4% | 💾 RAM: 56.6%
+    → Caption: a man in glasses and a tie standing in front of a computer 
+12:39:18 | Encoder: 0.040s | Decoder: 0.190s | 🧮 CPU: 8.2% | 💾 RAM: 56.5%
+    → Caption: a man in glasses and a tie
+12:39:22 | Encoder: 0.039s | Decoder: 0.275s | 🧮 CPU: 9.7% | 💾 RAM: 56.5%
+    → Caption: a man standing in a kitchen with a white shirt 
+12:39:25 | Encoder: 0.040s | Decoder: 0.277s | 🧮 CPU: 9.4% | 💾 RAM: 56.5%
+    → Caption: a room with a table and chairs and a window 
+12:39:29 | Encoder: 0.042s | Decoder: 0.270s | 🧮 CPU: 9.7% | 💾 RAM: 56.5%
+    → Caption: a room with a table and chairs and a window 
+12:39:32 | Encoder: 0.041s | Decoder: 0.260s | 🧮 CPU: 9.2% | 💾 RAM: 56.5%
+    → Caption: a room with a table and chairs and a window
+12:39:35 | Encoder: 0.041s | Decoder: 0.255s | 🧮 CPU: 8.9% | 💾 RAM: 56.5%
+    → Caption: a blurry picture of a room with a blurry background 
+12:39:38 | Encoder: 0.036s | Decoder: 0.247s | 🧮 CPU: 9.1% | 💾 RAM: 56.4%
+    → Caption: a window with a window cover and a window 
+12:39:42 | Encoder: 0.040s | Decoder: 0.272s | 🧮 CPU: 9.3% | 💾 RAM: 56.4%
+    → Caption: a window with a window and a table with chairs 
+12:39:45 | Encoder: 0.041s | Decoder: 0.254s | 🧮 CPU: 8.8% | 💾 RAM: 56.4%
+    → Caption: a room with a desk with a computer and chairs 
+12:39:48 | Encoder: 0.040s | Decoder: 0.208s | 🧮 CPU: 8.2% | 💾 RAM: 56.4%
+    → Caption: a desk with two computers and a monitor 
+12:39:52 | Encoder: 0.041s | Decoder: 0.225s | 🧮 CPU: 8.3% | 💾 RAM: 56.4%
+    → Caption: a desk with two computers and a monitor 
+12:39:55 | Encoder: 0.041s | Decoder: 0.214s | 🧮 CPU: 8.4% | 💾 RAM: 56.4%
+    → Caption: a desk with a computer monitor and keyboard 
+12:39:58 | Encoder: 0.043s | Decoder: 0.221s | 🧮 CPU: 8.5% | 💾 RAM: 56.4%
+    → Caption: a computer desk with a monitor and keyboard
+12:40:02 | Encoder: 0.041s | Decoder: 0.253s | 🧮 CPU: 9.4% | 💾 RAM: 56.4%
+    → Caption: a computer desk with a computer monitor and keyboard 
+12:40:05 | Encoder: 0.043s | Decoder: 0.281s | 🧮 CPU: 9.4% | 💾 RAM: 56.4%
+    → Caption: a man standing in front of a desk with a computer 
+12:40:08 | Encoder: 0.041s | Decoder: 0.255s | 🧮 CPU: 9.1% | 💾 RAM: 56.4%
+    → Caption: a man sitting at a desk with a computer 
+12:40:11 | Encoder: 0.040s | Decoder: 0.228s | 🧮 CPU: 8.2% | 💾 RAM: 56.4%
+    → Caption: a man sitting at a desk with a computer 
+12:40:15 | Encoder: 0.042s | Decoder: 0.247s | 🧮 CPU: 8.7% | 💾 RAM: 56.3%
+    → Caption: a man sitting in front of a computer desk 
+12:40:18 | Encoder: 0.040s | Decoder: 0.259s | 🧮 CPU: 9.4% | 💾 RAM: 56.3%
+    → Caption: a man is sitting in front of a computer desk 
+12:40:22 | Encoder: 0.042s | Decoder: 0.347s | 🧮 CPU: 10.9% | 💾 RAM: 56.4%
+    → Caption: a man holding a paper with a picture of a man on it 
+12:40:25 | Encoder: 0.049s | Decoder: 0.276s | 🧮 CPU: 9.9% | 💾 RAM: 56.3%
+    → Caption: a man holding a laptop in front of a window 
+12:40:28 | Encoder: 0.041s | Decoder: 0.289s | 🧮 CPU: 9.8% | 💾 RAM: 56.3%
+    → Caption: a man sitting on a chair with a stack of papers 
+12:40:32 | Encoder: 0.040s | Decoder: 0.245s | 🧮 CPU: 8.6% | 💾 RAM: 56.2%
+    → Caption: a man sitting at a desk with a computer 
+12:40:35 | Encoder: 0.041s | Decoder: 0.249s | 🧮 CPU: 9.5% | 💾 RAM: 56.2%
+    → Caption: a man sitting in front of a computer desk 
+12:40:38 | Encoder: 0.036s | Decoder: 0.230s | 🧮 CPU: 8.3% | 💾 RAM: 56.2%
+    → Caption: a man sitting in a chair holding a remote 
+12:40:41 | Encoder: 0.041s | Decoder: 0.221s | 🧮 CPU: 8.3% | 💾 RAM: 56.2%
+    → Caption: a man holding a camera and a laptop 
+12:40:45 | Encoder: 0.040s | Decoder: 0.342s | 🧮 CPU: 10.7% | 💾 RAM: 56.2%
+    → Caption: a man in a suit and tie standing in front of a computer 
+12:40:48 | Encoder: 0.041s | Decoder: 0.279s | 🧮 CPU: 9.7% | 💾 RAM: 56.2%
+    → Caption: a man in a black shirt is looking at a computer 
+12:40:52 | Encoder: 0.040s | Decoder: 0.252s | 🧮 CPU: 8.8% | 💾 RAM: 56.2%
+    → Caption: a man in a suit holding a laptop computer 
+12:40:55 | Encoder: 0.040s | Decoder: 0.327s | 🧮 CPU: 10.2% | 💾 RAM: 56.2%
+    → Caption: a man in a black shirt and a black suit is working on a computer
+12:40:58 | Encoder: 0.063s | Decoder: 0.249s | 🧮 CPU: 9.3% | 💾 RAM: 56.1%
+    → Caption: a man standing in front of a computer desk 
+12:41:02 | Encoder: 0.039s | Decoder: 0.296s | 🧮 CPU: 10.0% | 💾 RAM: 56.2%
+    → Caption: a man in a suit is talking on a cell phone 
+12:41:05 | Encoder: 0.053s | Decoder: 0.253s | 🧮 CPU: 9.1% | 💾 RAM: 56.1%
+    → Caption: a man standing in front of a computer screen 
+12:41:08 | Encoder: 0.040s | Decoder: 0.256s | 🧮 CPU: 8.6% | 💾 RAM: 56.0%
+    → Caption: a man standing in front of a computer desk 
+12:41:12 | Encoder: 0.041s | Decoder: 0.277s | 🧮 CPU: 9.5% | 💾 RAM: 56.0%
+    → Caption: a man in a suit is sitting at a desk
+12:41:15 | Encoder: 0.036s | Decoder: 0.339s | 🧮 CPU: 10.9% | 💾 RAM: 56.0%
+    → Caption: a man in a black shirt and a black tie is looking at a computer
+12:41:18 | Encoder: 0.035s | Decoder: 0.328s | 🧮 CPU: 11.7% | 💾 RAM: 56.1%
+    → Caption: a man in a suit and tie is looking at a computer 
+12:41:22 | Encoder: 0.041s | Decoder: 0.262s | 🧮 CPU: 10.0% | 💾 RAM: 56.1%
+    → Caption: a man in a suit is using a computer 
+
+Stopped.
+
+📊 Live Session Summary:
+• Avg Time: 0.312s
+• Min Time: 0.238s
+• Max Time: 0.399s
