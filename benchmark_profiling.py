@@ -26,9 +26,11 @@ tokenizer = AutoTokenizer.from_pretrained("gpt2")
 bos_token_id = tokenizer.bos_token_id or tokenizer.cls_token_id or 50256
 eos_token_id = tokenizer.eos_token_id or tokenizer.pad_token_id
 
+# load the ONNX encoder and decoder into memory for inference
 encoder_sess = ort.InferenceSession(ENCODER_MODEL, providers=["CPUExecutionProvider"])
 decoder_sess = ort.InferenceSession(DECODER_MODEL, providers=["CPUExecutionProvider"])
 
+# image processing function
 transform = T.Compose([
     T.Resize((224, 224)),
     T.ToTensor(),
@@ -45,7 +47,7 @@ pixel_values = transform(pil_img).unsqueeze(0).numpy()
 # -------------------------
 results = []
 
-print(f"\n🚀 Benchmarking over {NUM_RUNS} runs...\n")
+print(f"\nBenchmarking over {NUM_RUNS} runs...\n")
 
 for i in range(NUM_RUNS):
     run_start = time.perf_counter()
@@ -81,7 +83,7 @@ for i in range(NUM_RUNS):
     mem = psutil.virtual_memory().percent
 
     total_time = time.perf_counter() - run_start
-    print(f"🖼️ Run {i+1}: {total_time:.3f}s | 🧠 Encoder: {encoder_time:.3f}s | 🗣️ Decoder: {decoder_time:.3f}s | 🧮 CPU: {cpu}% | 💾 RAM: {mem}%")
+    print(f"Run {i+1}: {total_time:.3f}s |  Encoder: {encoder_time:.3f}s |  Decoder: {decoder_time:.3f}s | 🧮 CPU: {cpu}% | 💾 RAM: {mem}%")
     print(f"    → Caption: {caption}")
 
     results.append({
@@ -98,7 +100,7 @@ for i in range(NUM_RUNS):
 # Summary
 # -------------------------
 total_times = [r["Total Time (s)"] for r in results]
-print("\n📊 Summary:")
+print("\n Summary:")
 print(f"• Avg Time: {statistics.mean(total_times):.3f}s")
 print(f"• Min Time: {min(total_times):.3f}s")
 print(f"• Max Time: {max(total_times):.3f}s")
@@ -107,9 +109,13 @@ print(f"• Max Time: {max(total_times):.3f}s")
 # Optional: Save CSV
 # -------------------------
 if SAVE_CSV:
-    csv_file = "benchmark_results.csv"
+    timestamp = time.strftime("%Y%m%d_%H%M%S")
+    output_dir = "benchmark_logs"
+    os.makedirs(output_dir, exist_ok=True)
+    csv_file = os.path.join(output_dir, f"benchmark_results_{timestamp}.csv")
+
     with open(csv_file, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=results[0].keys())
         writer.writeheader()
         writer.writerows(results)
-    print(f"\n✅ Results saved to {csv_file}")
+    print(f"\n Results saved to {csv_file}")

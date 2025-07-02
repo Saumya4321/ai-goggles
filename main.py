@@ -1,9 +1,7 @@
 from transformers import VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
 from PIL import Image
 import torch
-from onnxruntime.quantization import quantize_dynamic, QuantType
 from types import MethodType
-import os
 
 # ------------------------------
 # Load model and processors
@@ -11,7 +9,7 @@ import os
 model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
 processor = ViTImageProcessor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
 tokenizer = AutoTokenizer.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
-model.eval()
+model.eval() # since we are not training
 
 # ------------------------------
 # Dummy input
@@ -19,10 +17,10 @@ model.eval()
 image = Image.new("RGB", (224, 224), color="white")
 inputs = processor(images=image, return_tensors="pt")
 pixel_values = inputs["pixel_values"]
-decoder_input_ids = torch.tensor([[tokenizer.bos_token_id]])  # ✅ use BOS token, not CLS
+decoder_input_ids = torch.tensor([[tokenizer.bos_token_id]])  # use BOS token, not CLS
 
 # ------------------------------
-# Export encoder
+# Export encoder to ONNX
 # ------------------------------
 print("Exporting encoder...")
 torch.onnx.export(
@@ -82,4 +80,4 @@ torch.onnx.export(
 # Optional: restore original decoder forward method
 model.decoder.forward = original_forward
 
-print("✅ Export complete")
+print("Export complete")

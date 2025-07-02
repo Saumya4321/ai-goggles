@@ -1,0 +1,6 @@
+Run,Encoder Time (s),Decoder Time (s),Total Time (s),CPU (%),RAM (%),Caption
+1,0.047,0.418,0.472,9.6,53.3,a man in a suit and tie standing next to a man in a suit
+2,0.088,0.333,0.427,84.0,53.3,a man in a suit and tie standing next to a man in a suit
+3,0.085,0.356,0.445,83.4,53.3,a man in a suit and tie standing next to a man in a suit
+4,0.047,0.35,0.402,82.4,53.3,a man in a suit and tie standing next to a man in a suit
+5,0.087,0.371,0.463,82.3,53.4,a man in a suit and tie standing next to a man in a suit
