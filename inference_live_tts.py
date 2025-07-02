@@ -101,8 +101,13 @@ try:
 
         print(f"{time.strftime('%H:%M:%S')} | Encoder: {encoder_time:.3f}s | Decoder: {decoder_time:.3f}s | 🧮 CPU: {cpu}% | 💾 RAM: {mem}%")
         print(f"    → Caption: {caption}")
+        tts_start = time.perf_counter()
+        
+
         engine.say(f"{caption}")
         engine.runAndWait()
+        tts_time = time.perf_counter() - tts_start
+        print(f"TTS Time: {tts_time:.2f}s")
 
         time.sleep(3)  # avoid spamming
 
