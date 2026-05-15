@@ -98,9 +98,7 @@ The same ONNX models were benchmarked on both a development PC and the target RP
  
 > RPi warmup (first inference): Encoder 22.9s / Decoder 30.1s / Total 53s — due to ONNX Runtime session init and memory allocation. Subsequent frames stabilize to the figures above.
  
-The encoder slowdown (~72x) is larger than the decoder (~31x) because the ViT encoder is a dense matrix operation with no sequential dependency — it fully exposes the ARM Cortex-A72's limited SIMD throughput relative to a modern x86 CPU. The decoder's autoregressive loop is inherently sequential, so the gap is smaller.
- 
-Raw benchmark logs are available in [`benchmark_logs/`](./benchmark_logs/).
+The encoder slowdown (~72x) is larger than the decoder (~31x) because the ViT encoder is a dense matrix operation. Raw benchmark logs are available in [`benchmark_logs/`](./benchmark_logs/).
 
 ## Setup
 
