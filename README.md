@@ -71,8 +71,8 @@ GPT-2's `forward()` uses KV-caching by default (`use_cache=True`), which returns
 ├── loop_with_tts.py             # Stage 1 prototype — BLIP via PyTorch + TTS
 │
 ├── benchmark_profiling.py       # Offline benchmark — N passes on a static image,
-│                                #   logs per-run stats and saves results to CSV
-├── benchmark_logs/              # CSV outputs from benchmark_profiling.py
+│                                #   logs per-run stats and saves results to .txt
+├── benchmark_logs/              # .txt outputs from benchmark_profiling.py
 │
 ├── TTS_testing/                 # Early TTS integration experiments
 ├── rpi_encoder-decoder-test.txt # Raw output log from initial RPi deployment test
