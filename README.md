@@ -137,13 +137,13 @@ python benchmark_profiling.py       # runs 5 passes, saves CSV to benchmark_logs
 
 + **TTS latency tracking** — `inference_live_tts.py` separately times the `pyttsx3` speech output so TTS overhead is visible in logs and doesn't inflate inference metrics.
 
-+ **CSV logging** — `benchmark_profiling.py` saves timestamped CSVs to `benchmark_logs/` for offline analysis.
++ **CSV logging** — `benchmark_profiling.py` saves timestamped .txt to `benchmark_logs/` for offline analysis.
 
 
 ## Limitations & Future Work
 
-- **Latency** — ~10–14s per caption is too slow for real-time assistive use. INT8 quantization of the ONNX models would likely reduce decoder latency by 30–50%.
-- **RAM pressure** — 95%+ RAM utilization leaves little headroom. An 8GB RPi 4 or RPi 5 would give more stability.
-- **No KV-cache** — disabling caching for ONNX compatibility means O(n²) attention per decoding step. A future approach using ONNX-compatible static KV-cache would recover this efficiency.
+- **Latency** — ~10–14s per caption is too slow for real-time assistive use. INT8 quantization of the ONNX models would likely reduce decoder latency.
+- **RAM pressure** — 95%+ RAM utilization leaves little headroom. An RPi 5 would give more stability.
+- **No KV-cache** — disabling caching for ONNX compatibility means O(n²) attention per decoding step. 
 - **TTS is sequential** — `pyttsx3` blocks inference during speech. Threading would reduce perceived lag significantly.
 - **Caption repetition** — greedy decoding with short max-token limit produces repetitive captions on static scenes.
