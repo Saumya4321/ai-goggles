@@ -80,25 +80,27 @@ GPT-2's `forward()` uses KV-caching by default (`use_cache=True`), which returns
 └── requirements.txt
 ```
 
-
-## Benchmark Results (RPi 4, 4GB RAM, headless)
-
-Measured on live webcam feed via `inference_live_benchmark.py`:
-
-| Stage | First run (warmup) | Steady state |
-|---|---|---|
-| ViT Encoder | ~22.9s | ~3.1s |
-| GPT-2 Decoder | ~30.1s | ~7–11s |
-| Total per caption | ~53s | ~10–14s |
-
-> First inference is significantly slower due to ONNX Runtime session initialization and memory allocation. Subsequent frames stabilize.
-
-**System utilization (steady state):**
-- CPU: 74–82%
-- RAM: ~95% (4GB fully utilized by ONNX sessions + OS)
-
-**Sample live session output:**
-Can be found in ```benchmark_logs.txt```.
+## Benchmark Results
+ 
+The same ONNX models were benchmarked on both a development PC and the target RPi 4 to quantify the cost of edge deployment. Both ran CPU-only inference via `CPUExecutionProvider`.
+ 
+### Cross-Platform Comparison
+ 
+| Metric | PC (Windows 11, x86) | RPi 4 (Linux, ARM) | RPi slowdown |
+|---|---|---|---|
+| Encoder avg | 0.041s | 2.987s | **~72x** |
+| Decoder avg | 0.264s | 8.230s | **~31x** |
+| Total avg | 0.305s | 11.216s | **~37x** |
+| Total min | 0.230s | 8.480s | — |
+| Total max | 0.389s | 14.466s | — |
+| CPU usage | ~9% | 74–82% | — |
+| RAM usage | ~57% | ~95% | — |
+ 
+> RPi warmup (first inference): Encoder 22.9s / Decoder 30.1s / Total 53s — due to ONNX Runtime session init and memory allocation. Subsequent frames stabilize to the figures above.
+ 
+The encoder slowdown (~72x) is larger than the decoder (~31x) because the ViT encoder is a dense matrix operation with no sequential dependency — it fully exposes the ARM Cortex-A72's limited SIMD throughput relative to a modern x86 CPU. The decoder's autoregressive loop is inherently sequential, so the gap is smaller.
+ 
+Raw benchmark logs are available in [`benchmark_logs/`](./benchmark_logs/).
 
 ## Setup
 
