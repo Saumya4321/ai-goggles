@@ -129,15 +129,15 @@ python benchmark_profiling.py       # runs 5 passes, saves CSV to benchmark_logs
 
 ## Key Implementation Details
 
-**Headless auto-detection** — all scripts check `os.environ.get("DISPLAY")` and disable OpenCV GUI automatically when running over SSH.
++ **Headless auto-detection** — all scripts check `os.environ.get("DISPLAY")` and disable OpenCV GUI automatically when running over SSH.
 
-**Greedy decoding** — argmax at each step rather than beam search, reducing decoder latency on constrained hardware.
++ **Greedy decoding** — argmax at each step rather than beam search, reducing decoder latency on constrained hardware.
 
-**Frame sampling** — 3-second sleep between captures avoids redundant inference on near-identical frames and manages CPU thermal load.
++ **Frame sampling** — 3-second sleep between captures avoids redundant inference on near-identical frames and manages CPU thermal load.
 
-**TTS latency tracking** — `inference_live_tts.py` separately times the `pyttsx3` speech output so TTS overhead is visible in logs and doesn't inflate inference metrics.
++ **TTS latency tracking** — `inference_live_tts.py` separately times the `pyttsx3` speech output so TTS overhead is visible in logs and doesn't inflate inference metrics.
 
-**CSV logging** — `benchmark_profiling.py` saves timestamped CSVs to `benchmark_logs/` for offline analysis.
++ **CSV logging** — `benchmark_profiling.py` saves timestamped CSVs to `benchmark_logs/` for offline analysis.
 
 ---
 
