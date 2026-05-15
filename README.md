@@ -139,7 +139,6 @@ python benchmark_profiling.py       # runs 5 passes, saves CSV to benchmark_logs
 
 + **CSV logging** — `benchmark_profiling.py` saves timestamped CSVs to `benchmark_logs/` for offline analysis.
 
----
 
 ## Limitations & Future Work
 
