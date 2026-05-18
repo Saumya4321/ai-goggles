@@ -25,7 +25,7 @@ Both models exported using `torch.onnx.export` at opset 16. The decoder required
 Four inference scripts of increasing complexity, developed iteratively: static image → live webcam → live + benchmarking → live + benchmarking + TTS.
 
 ### Stage 5 — Benchmarking on RPi 4
-Deployed and benchmarked on Raspberry Pi 4, headless mode over SSH. Results logged per-frame and saved to CSV.
+Deployed and benchmarked on Raspberry Pi 4, headless mode over SSH. Results logged per-frame and saved to .txt files.
 
 
 ## Architecture
