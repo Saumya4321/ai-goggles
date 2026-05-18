@@ -54,7 +54,7 @@ This was the core engineering challenge. `VisionEncoderDecoderModel` contains a 
 **The decoder problem:**
 GPT-2's `forward()` uses KV-caching by default (`use_cache=True`), which returns `past_key_values` as dynamically nested tuples. `torch.onnx.export` cannot trace this structure. The fix is to monkey-patch the decoder's `forward` method to force `use_cache=False` before export, then restore the original afterward.
 
-> **Tradeoff:** Disabling KV-cache means the decoder re-processes all previous tokens at every generation step (O(n²) attention). This is less efficient per step but is the correct tradeoff for ONNX compatibility on constrained hardware where session simplicity matters more than per-step speed.
+> **Tradeoff:** Disabling KV-cache means the decoder re-processes all previous tokens at every generation step (O(n²)). This is less efficient per step but is the correct tradeoff for ONNX compatibility on constrained hardware where session simplicity matters more than per-step speed.
 
 
 ## File Structure
